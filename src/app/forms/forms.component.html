@@ -1,0 +1,120 @@
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+
+    <div>
+        <label>First Name:</label>
+        <input type="text" formControlName="firstName" placeholder="Enter First Name">
+        <span *ngIf="loginForm.get('firstName') as firstName">
+            <span *ngIf="firstName && firstName.touched && firstName.invalid" style="color: red;">Name is not
+                valid</span>
+        </span>
+    </div>
+
+    <div>
+        <label>Last Name:</label>
+        <input type="text" formControlName="lastName" placeholder="Enter Last Name">
+        <span *ngIf="loginForm.get('lastName') as lastName">
+            <span *ngIf="lastName && lastName.touched && lastName.invalid" style="color: red;">lastName is not
+                valid</span>
+        </span>
+
+    </div>
+
+
+    <div>
+        <label>Age:</label>
+        <input type="number" formControlName="age" placeholder="Enter you Age">
+        <span *ngIf="loginForm.get('age') as age">
+            <span *ngIf="age && age.touched && age.invalid" style="color: red;">Age is not valid (Should be between 18
+                and 100)</span>
+        </span>
+    </div>
+
+    <div>
+        <label>Phone Number:</label>
+        <input type="tel" formControlName="phoneNumber" placeholder="Enter Your Phone Number">
+        <span *ngIf="loginForm.get('phoneNumber') as phoneNumber">
+            <span *ngIf="phoneNumber && phoneNumber.touched && phoneNumber.invalid" style="color: red;">Phone Number is
+                not valid (Should be between 10-12) </span>
+        </span>
+    </div>
+
+    <div>
+        <label>Password:</label>
+        <input type="password" formControlName="password" placeholder="Enter Password">
+        <span *ngIf="loginForm.get('password') as password">
+            <span *ngIf="password && password.touched && password.invalid" style="color: red;">Password is not
+                valid</span>
+        </span>
+    </div>
+
+    <div>
+        <label>Email:</label>
+        <input type="email" formControlName="email" placeholder="Enter Your Email">
+        <span *ngIf="loginForm.get('email') as email">
+            <span *ngIf="email && email.touched && email.invalid " style="color: red;">Email is not valid</span>
+        </span>
+    </div>
+
+    <div>
+        <label>Gender:</label>
+        <select formControlName="gender">
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <span *ngIf="loginForm.get('gender') as gender">
+            <span *ngIf="gender && gender.touched && gender.invalid" style="color: red;">Gender is not valid</span>
+        </span>
+    </div>
+
+    <div>
+        <label>State:</label>
+        <input type="text" formControlName="state" placeholder="Enter Your State">
+        <span *ngIf="loginForm.get('state') as state">
+            <span *ngIf="state && state.touched && state.invalid" style="color: red;">State is not valid </span>
+        </span>
+    </div>
+
+    <div>
+        <button [disabled]="!loginForm.valid">Submit</button>
+    </div>
+</form>
+<br><br>
+
+
+
+<pre>{{pageTitle}}</pre>
+<input [(ngModel)]="pageTitle" placeholder="Enter title" style="font-size: large;margin: 20px;">
+<button (click)="onClick()" style="display: flex;float: left;">Click here</button>
+
+
+<p [ngClass]="['blue-bold-text']">This is line where we are using ngClasss</p><br><br>
+
+<p class="p">This is line where we are using Classs</p><br><br>
+
+<p [ngClass]="['blue-bold-text']" class="p">This is line where we are using class and ngClasss</p><br><br>
+
+
+<span [ngStyle]="{'background-color':'green'}">This is line where we are using ngStyle</span><br><br>
+
+<span style="display: flex; font-size: 20px;color: gold;">This is line where we are using style</span><br><br>
+
+<span [ngStyle]="{'background-color':'green'}" style="display: flex; font-size: 20px;color: gold;">This is line where we
+    are using ngStyle or Style</span><br><br>
+
+<div [ngSwitch]="value">
+    <div *ngSwitchCase="01" class="red">Line 01</div>
+    <div *ngSwitchCase="02" class="red">Line 02</div>
+    <div *ngSwitchCase="03" class="red">Line 03</div>
+    <div *ngSwitchCase="04" class="red">Line 04</div>
+    <div *ngSwitchCase="05" class="red">Line 05</div>
+    <div *ngSwitchCase="06" class="red">Line 06</div>
+    <div *ngSwitchDefault class="red">Line Out</div>
+</div>
+
+
+<h1> Number Count</h1>
+<input [(ngModel)]="Normal" placeholder="Enter number"><br><br>
+<button (click)="count('max')">Max</button> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<button (click)="count('min')">Min</button>

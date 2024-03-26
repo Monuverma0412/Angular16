@@ -1,0 +1,51 @@
+form {
+    width: 300px;
+    margin: auto;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="email"],
+  select,
+  input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ddd;
+    color: black;
+    cursor: not-allowed;
+  }
+
+  
+
+  .blue-bold-text{
+    color: yellowgreen ;
+    font: bolder;
+  }
+  p{
+    color: brown;
+  }

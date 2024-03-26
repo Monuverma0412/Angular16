@@ -1,0 +1,16 @@
+<h2> Row Compoent</h2>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <!-- <th>Action</th> -->
+  </tr>
+  <tr *ngFor="let row of rows; let i = index">
+    <td>{{ row.id }}</td>
+    <td>{{ row.name }}</td>
+    <!-- <td> <button (click)="removeRow(i)">Remove</button> </td> -->
+  </tr>
+</table>
+
+<button (click)="addRow()">Add Row</button>
+  
